@@ -1,0 +1,399 @@
+@import "mixins.less";
+@import "variables.less";
+
+@charset "utf-8";
+/* CSS Document */
+
+.headline-font(@size)
+{
+  font-size: @size;
+  font-family: @headline-font;
+  letter-spacing: 1rem;
+}
+@headline-font: 'Avenir LT W01_45 Book1475508';
+
+.body-font(@size)
+{
+  font-size: @size;
+  font-family:'Avenir LT W01_45 Book1475508';
+}
+.animation(@props){
+  -webkit-animation: @props;
+  -moz-animation: @props;
+  animation: @props;
+}
+
+@easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+/**********       BASE        **********/
+
+
+html{
+  box-sizing: border-box;
+  color: @darkColor;
+  
+  a { color: @teal; 
+    text-decoration:none; font-size: 1em;
+  }
+  a:visited { color:  @teal }
+  a:hover { color:  @teal }
+  a:focus { outline: thin dotted; }
+  a:hover, a:active { outline: 0; }
+}
+
+body{
+  line-height: 1.4; 
+  .body-font(1vw);
+  letter-spacing: .01em;
+  margin: 0;
+  text-align: center;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  background: #fff;
+  @media (max-width: 800px) {
+    font-size: 3.5vw;
+  }
+}
+.touch{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  // outline: 1px solid red;
+  &:nth-child(3n+1){
+    outline-color: green;
+  }
+  &:nth-child(4n+1){
+    outline-color: blue;
+  }
+}
+
+/* ===== Primary Styles ========================================================
+   Author: Nick JoneS
+   ========================================================================== */
+
+::selection {
+  background: @teal;
+}
+
+// TAGS
+////////////
+
+h1,h2,h3,h4,h5{
+  font-family: @headline-font;
+  font-weight: 200;
+  line-height: 1.3;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  margin: 0;
+  @media (max-width: 800px){
+    letter-spacing: .2em;
+  }
+}
+h1{
+  position: relative;
+  font-size: 3.2em;
+  line-height: 1.3;
+  top: 0;
+  width: auto;
+  text-align: center;
+  display: inline-block;
+}
+h2{
+  position: relative;
+  font-size: 1.2em; 
+  top: 0;
+}
+p{
+  font-size: 1.2em;
+  padding: 20vh 20% 0;
+}
+
+// ITEMS
+////////////
+
+.Button{
+  outline: none;
+  border: none;
+  font-size: 3em;
+  padding: 0;
+  line-height: 0;
+  position: relative;
+}
+
+// ELEMENTS
+////////////
+
+.Button.Circle{
+  width: 80px;
+  height: 80px;
+  background: #ccc;
+}
+.Button-icon{
+  position: absolute;
+  .centerXY;
+}
+.Title{
+  border-bottom: 3px solid;
+  display: inline-block;
+  &.small{
+    font-size: 1em;
+    border-bottom: 1px solid;
+  }
+}
+.Notification-dot{
+  width: 30px;
+  height: 30px;
+  background: @boxPopColor;
+  color: @lightColor;
+  padding-top: 4px;
+  cursor: pointer;
+  .rounded(50%);
+
+  &:hover{
+    color: @boxPopColor;
+    background: @lightColor;
+  }
+}
+.Link{
+  font-size: 1em;
+  border-bottom: 1px solid;
+  display: inline-block;
+  margin-right: 20px;
+  &:last-of-type{
+    margin-right: 0;
+  }
+}
+.Cover{
+  img{
+    width: 100%;
+  }
+}
+.Avatar{
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  .rounded(50%);
+  img{
+    width: 100%;
+    .rounded(50%);    
+  }
+
+}
+
+// MODIFIERS
+////////////
+
+.Circle{
+  .rounded(50%);
+}
+
+.active{
+  border-bottom-color: @boxPopColor;
+}
+
+.fixed-tr{
+  position: fixed;
+  z-index: 5;
+  right: 30px;
+  top: 30px;
+}
+
+// ANIMATIONS
+/////////////
+
+.tr-fast{
+  .transition(.05s);
+}
+.tr-med{
+  .transition(.3s)
+}
+
+// COMPONENTS
+////////////
+
+.Header{
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 360px;
+  background: @darkColor;
+  color: @lightColor;
+  z-index: 2;
+
+  .Logo{
+    position: fixed;
+    left: 30px;
+    top: 30px;
+  }
+  .Button-plus{
+    position: absolute;
+    right: 15%;
+    bottom: -40px;
+    background: @boxPopColor;
+    color: @lightColor;
+    cursor: pointer;
+    .rounded(50%);
+    .Button-icon{
+      margin-top: -5px;
+    }
+    &:hover{
+      color: @darkColor;
+      background: @highlightColor;
+    }
+  }
+  .Title{
+    &.small{
+      opacity: 0;
+      position: absolute;
+      bottom: 8px;
+      left: 100px;
+    }
+  }
+  .Url{
+    margin: 35px 0;
+  }
+  &.collapsed{
+    .Title{
+      opacity: 0;
+      &.small{
+        bottom: 18px;
+        font-size: 1em;
+        opacity: 1;
+      }
+    }
+  }
+  .Nav{
+    position: absolute;
+    bottom: 18px;
+    .centerX;
+    .Link{
+
+    }
+  }
+}
+
+// MODALS
+///////////
+
+.Notification-menu{
+  position: fixed;
+  right: -50%;
+  top: 0;
+  width: 50%;
+  padding: 60px 160px 60px 60px;
+  min-height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: @lightColor2;
+  z-index: 2;
+  .transition(.3s,@easeOut);
+  text-align: left;
+  &.open{
+    right: -100px;
+  }
+
+  .Notification{
+    padding: 20px 0;
+    border-bottom: 1px solid @lightColor2;
+  }
+  .Avatar{
+    position: relative;
+    width: 25px;
+    height: 25px;
+    top: 8px;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .Message{
+    position: relative;
+    display: inline-block;
+  }
+}
+// SCREENS
+////////////
+
+// SITE
+.Site-posts{
+  position: relative;
+  margin: auto;
+  width: 62%;
+  margin-top: 400px;
+}
+.PostCard{
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 44%;
+  height: 400px;
+  background: @lightColor;
+  margin: 1%;
+  .rounded(5px);
+  cursor: pointer;
+  .transition(.1s,@easeOutBack);
+  text-align: left;
+  padding-top: 200px;
+  &:hover{
+    .PostCard-content{
+
+    }
+  }
+  &:first-of-type{
+    min-height: 500px;
+    padding-top: 300px;
+    width: 90%;
+    .Title{
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+  }
+  .Cover{
+    position: absolute;
+    top: 0;
+  }
+  .Avatar{
+    position: absolute;
+    top: -20px;
+    left: 30px;
+  }
+  .Attribution{
+    display: block;
+    left: 30px;
+    top: 30px;
+    width: 100%;
+    color: @lightColor50;
+    .Author,.Publisher{
+      color: @lightColor;
+      display: inline-block;
+    }
+  }
+  .Title{
+    margin-bottom: 1em;
+    text-align: left;
+  }
+  .Button-feature{
+    position: absolute;
+    bottom: 12px;
+    right: 20px;
+  }
+}
+.PostCard-content{
+  position: absolute;
+  padding: 20px 30px 20px 95px;
+  width: 100%;
+  background: @darkColor;
+  color: @lightColor;
+  text-align: left;
+  height: 200px;
+}
+.PostCard-title{
+  font-size: 1em;
+}
