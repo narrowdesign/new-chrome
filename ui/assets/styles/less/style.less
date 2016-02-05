@@ -142,11 +142,15 @@ p{
   .centerXY;
 }
 .Title{
-  border-bottom: 3px solid;
   display: inline-block;
+  span{
+    border-bottom: 3px solid;
+  }
   &.small{
-    font-size: 1em;
-    border-bottom: 1px solid;
+    span{
+      font-size: 1em;
+      border-bottom: 1px solid;
+    }
   }
 }
 .Notification-dot{
@@ -343,7 +347,7 @@ p{
   padding-top: 200px;
   &:hover{
     .PostCard-content{
-
+      background: #222;
     }
   }
   &:first-of-type{
@@ -351,7 +355,7 @@ p{
     padding-top: 300px;
     width: 90%;
     .Title{
-      font-size: 2rem;
+      font-size: 1.6rem;
       margin-bottom: 15px;
     }
   }

@@ -356,10 +356,12 @@ p {
   backface-visibility: hidden;
 }
 .Title {
-  border-bottom: 3px solid;
   display: inline-block;
 }
-.Title.small {
+.Title span {
+  border-bottom: 3px solid;
+}
+.Title.small span {
   font-size: 1em;
   border-bottom: 1px solid;
 }
@@ -615,13 +617,16 @@ p {
   text-align: left;
   padding-top: 200px;
 }
+.PostCard:hover .PostCard-content {
+  background: #222;
+}
 .PostCard:first-of-type {
   min-height: 500px;
   padding-top: 300px;
   width: 90%;
 }
 .PostCard:first-of-type .Title {
-  font-size: 2rem;
+  font-size: 1.6rem;
   margin-bottom: 15px;
 }
 .PostCard .Cover {
