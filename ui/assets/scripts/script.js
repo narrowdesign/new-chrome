@@ -4,17 +4,18 @@ var _winH;
 // ELEMENTS
 ///////////
 
+var App = document.querySelector('#app')
 // Header Elements
-var HeaderElement = document.getElementsByClassName('Header')[0];
+var HeaderElement = document.querySelector('.Header');
 var LogoElement = document.querySelector('.Header .logo');
 var NotificationElement = document.querySelector('.Notification-dot');
 var Button_plusElement = document.querySelector('.Button-plus');
 var Header_titleElement = document.querySelector('.Header-title');
 var Covers = document.querySelectorAll('.PostCard .Cover')
-console.log(Covers)
 
-// Modules
-var Notification_menu = document.querySelector('.Notification-menu')
+// Modals
+var Notification_modal = document.querySelector('.Notification-modal')
+var Editor_modal = document.querySelector('.Editor-modal')
 
 
 // CONSTANTS
@@ -50,9 +51,9 @@ var _scrollSpread = 500; // number of pixels to scroll for full collapse
 document.addEventListener('resize',resizeHandler);
 document.addEventListener('scroll',scrollHandler)
 document.addEventListener('touchmove',moveHandler)
-document.addEventListener('click',function(){})
 
-NotificationElement.addEventListener('click', showNotifications);
+NotificationElement.addEventListener('click', showNotificationModal);
+Button_plusElement.addEventListener('click', showEditorModal)
 
 // FUNCTIONS
 ////////////
@@ -84,8 +85,12 @@ function resizeHandler () {
 	_winH = document.height;
 }
 
-function showNotifications () {
-	Notification_menu.classList.toggle('open')
+function showNotificationModal () {
+	App.classList.toggle('show-notification-modal')
+}
+
+function showEditorModal () {
+	App.classList.toggle('show-editor-modal')
 }
 
 // UTILS

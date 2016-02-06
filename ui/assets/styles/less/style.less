@@ -120,13 +120,16 @@ p{
 // ITEMS
 ////////////
 
-.Button{
+.Button,button{
   outline: none;
   border: none;
-  font-size: 3em;
-  padding: 0;
-  line-height: 0;
+  padding: 15px 20px;
+  .rounded(5px);
+  line-height: 1rem;
   position: relative;
+  background: @boxPopColor;
+  color: @lightColor;
+  font-size: 1.2rem;
 }
 
 // ELEMENTS
@@ -248,6 +251,7 @@ p{
     z-index: 3;
     width: 80px;
     height: 80px;
+    font-size: 3rem;
     .rounded(50%);
     .Button-icon{
       margin-top: -5px;
@@ -291,7 +295,28 @@ p{
 // MODALS
 ///////////
 
-.Notification-menu{
+.Editor-modal{
+  position: fixed;
+  padding: 60px;
+  .centerXY;
+  z-index: 4;
+  width: 50%;  
+  color: @darkColor;
+  background: @lightColor2;
+  visibility: hidden;
+  opacity: 0;
+  text-align: center;
+  textarea{
+    position: relative;
+    display: block;
+    width: 62%;
+    height: 200px;
+    border: none;
+    margin: 20px auto;
+  }
+}
+
+.Notification-modal{
   position: fixed;
   right: -50%;
   top: 0;
@@ -304,9 +329,6 @@ p{
   z-index: 2;
   .transition(.3s,@easeOut);
   text-align: left;
-  &.open{
-    right: -100px;
-  }
 
   .Notification{
     padding: 20px 0;
@@ -403,4 +425,19 @@ p{
 }
 .PostCard-title{
   font-size: 1em;
+}
+
+// STATES
+/////////
+
+#app.show-editor-modal{
+  .Editor-modal{
+    visibility: visible;
+    opacity: 1;
+  }
+}
+#app.show-notification-modal{
+  .Notification-modal{
+    right: -100px;
+  }
 }

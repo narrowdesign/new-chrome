@@ -327,13 +327,19 @@ p {
   font-size: 1.2em;
   padding: 20vh 20% 0;
 }
-.Button {
+.Button,
+button {
   outline: none;
   border: none;
-  font-size: 3em;
-  padding: 0;
-  line-height: 0;
+  padding: 15px 20px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  line-height: 1rem;
   position: relative;
+  background: #ed464e;
+  color: #fff;
+  font-size: 1.2rem;
 }
 .Button.Circle {
   width: 80px;
@@ -486,6 +492,7 @@ p {
   z-index: 3;
   width: 80px;
   height: 80px;
+  font-size: 3rem;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
@@ -529,7 +536,38 @@ p {
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-.Notification-menu {
+.Editor-modal {
+  position: fixed;
+  padding: 60px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  -ms-transform: translate3d(-50%, -50%, 0);
+  -o-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 4;
+  width: 50%;
+  color: darkblue;
+  background: #ddd;
+  visibility: hidden;
+  opacity: 0;
+  text-align: center;
+}
+.Editor-modal textarea {
+  position: relative;
+  display: block;
+  width: 62%;
+  height: 200px;
+  border: none;
+  margin: 20px auto;
+}
+.Notification-modal {
   position: fixed;
   right: -50%;
   top: 0;
@@ -561,14 +599,11 @@ p {
   transition-property: all;
   text-align: left;
 }
-.Notification-menu.open {
-  right: -100px;
-}
-.Notification-menu .Notification {
+.Notification-modal .Notification {
   padding: 20px 0;
   border-bottom: 1px solid #ddd;
 }
-.Notification-menu .Avatar {
+.Notification-modal .Avatar {
   position: relative;
   width: 25px;
   height: 25px;
@@ -576,7 +611,7 @@ p {
   display: inline-block;
   margin-right: 10px;
 }
-.Notification-menu .Message {
+.Notification-modal .Message {
   position: relative;
   display: inline-block;
 }
@@ -673,4 +708,11 @@ p {
 }
 .PostCard-title {
   font-size: 1em;
+}
+#app.show-editor-modal .Editor-modal {
+  visibility: visible;
+  opacity: 1;
+}
+#app.show-notification-modal .Notification-modal {
+  right: -100px;
 }
