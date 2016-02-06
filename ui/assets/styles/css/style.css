@@ -391,9 +391,35 @@ button {
   border-bottom: 1px solid;
   display: inline-block;
   margin-right: 20px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -ms-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  -ms-transition-delay: 0s;
+  transition-delay: 0s;
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.075);
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.075);
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.075);
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.075);
+  transition-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.075);
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -ms-transition-property: all;
+  transition-property: all;
 }
 .Link:last-of-type {
   margin-right: 0;
+}
+.Link:hover {
+  border-bottom-color: #ed464e;
+}
+.Link:hover span {
+  border-bottom-color: inherit;
 }
 .Cover img {
   width: 100%;
@@ -635,11 +661,11 @@ button {
   -webkit-border-radius: 5px;
   border-radius: 5px;
   cursor: pointer;
-  -webkit-transition-duration: 0.1s;
-  -moz-transition-duration: 0.1s;
-  -o-transition-duration: 0.1s;
-  -ms-transition-duration: 0.1s;
-  transition-duration: 0.1s;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -ms-transition-duration: 0.2s;
+  transition-duration: 0.2s;
   -webkit-transition-delay: 0s;
   -moz-transition-delay: 0s;
   -o-transition-delay: 0s;
@@ -707,6 +733,25 @@ button {
   color: #fff;
   text-align: left;
   height: 200px;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -ms-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  -ms-transition-delay: 0s;
+  transition-delay: 0s;
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -ms-transition-property: all;
+  transition-property: all;
 }
 .PostCard-title {
   font-size: 1em;

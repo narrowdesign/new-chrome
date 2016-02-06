@@ -175,8 +175,16 @@ p{
   border-bottom: 1px solid;
   display: inline-block;
   margin-right: 20px;
+  cursor: pointer;
+  .transition(.2s, @easeOut);
   &:last-of-type{
     margin-right: 0;
+  }
+  &:hover{
+    border-bottom-color: @boxPopColor;
+    span{
+      border-bottom-color: inherit;
+    }
   }
 }
 .Cover{
@@ -193,7 +201,6 @@ p{
     width: 100%;
     .rounded(50%);    
   }
-
 }
 
 // MODIFIERS
@@ -287,7 +294,7 @@ p{
     bottom: 18px;
     .centerX;
     .Link{
-
+    
     }
   }
 }
@@ -367,7 +374,7 @@ p{
   margin: 1%;
   .rounded(5px);
   cursor: pointer;
-  .transition(.1s,@easeOutBack);
+  .transition(.2s,@easeOutBack);
   text-align: left;
   padding-top: 200px;
   &:hover{
@@ -422,6 +429,7 @@ p{
   color: @lightColor;
   text-align: left;
   height: 200px;
+  .transition(.2s,@easeOutBack);
 }
 .PostCard-title{
   font-size: 1em;
