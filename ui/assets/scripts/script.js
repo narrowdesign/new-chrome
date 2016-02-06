@@ -74,7 +74,7 @@ function scrollHandler(e) {
 
 	for (var i = Covers.length - 1; i >= 0; i--) {
 		
-		// Covers[i].style.top = (scrollTop+Covers[i].offsetTop+430)/30
+		Covers[i].style.top = (scrollTop+Covers[i].offsetTop+430)/20
 	};
 }
 function moveHandler(e) {
