@@ -5,35 +5,35 @@ var _winH;
 ///////////
 
 // Header Elements
-var Header_el = document.getElementsByClassName('Header')[0];
-var Logo_el = document.querySelector('.Header .logo');
-var Notif_el = document.querySelector('.Notification-dot');
-var Button_plus_el = document.querySelector('.Button-plus');
-var Header_title_el = document.querySelector('.Header-title');
+var HeaderElement = document.getElementsByClassName('Header')[0];
+var LogoElement = document.querySelector('.Header .logo');
+var NotificationElement = document.querySelector('.Notification-dot');
+var Button_plusElement = document.querySelector('.Button-plus');
+var Header_titleElement = document.querySelector('.Header-title');
 var Covers = document.querySelectorAll('.PostCard .Cover')
 console.log(Covers)
 
 // Modules
-var Notif_menu = document.querySelector('.Notification-menu')
+var Notification_menu = document.querySelector('.Notification-menu')
 
 
 // CONSTANTS
 ////////////
 
 var _headerMinH = 55;
-var _headerMaxH = Header_el.clientHeight;
+var _headerMaxH = HeaderElement.clientHeight;
 var _headerSpread = _headerMaxH - _headerMinH;
 var _headerRatio = 500/_headerSpread;
 
 var _logoMinY = 10;
-var _logoMaxY = Logo_el.offsetTop;
+var _logoMaxY = LogoElement.offsetTop;
 var _logoSpread = _logoMaxY - _logoMinY;
 var _logoRatio = 500/_logoSpread
 
-var _notifMinY = 10;
-var _notifMaxY = Notif_el.offsetTop;
-var _notifSpread = _notifMaxY - _notifMinY;
-var _notifRatio = 500/_notifSpread
+var _notificationMinY = 10;
+var _notificationMaxY = NotificationElement.offsetTop;
+var _notificationSpread = _notificationMaxY - _notificationMinY;
+var _notificationRatio = 500/_notificationSpread
 
 var _button_plusMinS = .8;
 var _button_plusMaxS = 1;
@@ -52,7 +52,7 @@ document.addEventListener('scroll',scrollHandler)
 document.addEventListener('touchmove',moveHandler)
 document.addEventListener('click',function(){})
 
-Notif_el.addEventListener('click', showNotifications);
+NotificationElement.addEventListener('click', showNotifications);
 
 // FUNCTIONS
 ////////////
@@ -60,22 +60,18 @@ Notif_el.addEventListener('click', showNotifications);
 function scrollHandler(e) {
 	var scrollTop = -document.getElementsByTagName('body')[0].scrollTop;
 
-	Header_el.style.top = Math.max(-_headerSpread,scrollTop/_headerRatio);
-	Logo_el.style.top = Math.max(_logoMinY,_logoMaxY+scrollTop/_logoRatio)
-	Notif_el.style.top = Math.max(_notifMinY,_notifMaxY+scrollTop/_notifRatio)
-	Button_plus_el.style.webkitTransform = 'scale('+ Math.max(_button_plusMinS,_button_plusMaxS+scrollTop/_button_plusRatio) + ')'
+	HeaderElement.style.top = Math.max(-_headerSpread,scrollTop/_headerRatio);
+	LogoElement.style.top = Math.max(_logoMinY,_logoMaxY+scrollTop/_logoRatio)
+	NotificationElement.style.top = Math.max(_notificationMinY,_notificationMaxY+scrollTop/_notificationRatio)
+	Button_plusElement.style.webkitTransform = 'scale('+ Math.max(_button_plusMinS,_button_plusMaxS+scrollTop/_button_plusRatio) + ')'
 	
 	if(scrollTop < -500){
-		Header_el.classList.add('collapsed')
+		HeaderElement.classList.add('collapsed')
 	}else{
-		Header_el.classList.remove('collapsed')
+		HeaderElement.classList.remove('collapsed')
 	}
-	Header_title_el.style.top = Math.max(0,Math.min(100,-scrollTop/5))
+	Header_titleElement.style.top = Math.max(0,Math.min(100,-scrollTop/5))
 
-	for (var i = Covers.length - 1; i >= 0; i--) {
-		
-		Covers[i].style.top = (scrollTop+Covers[i].offsetTop+430)/20
-	};
 }
 function moveHandler(e) {
 
@@ -89,7 +85,7 @@ function resizeHandler () {
 }
 
 function showNotifications () {
-	Notif_menu.classList.toggle('open')
+	Notification_menu.classList.toggle('open')
 }
 
 // UTILS
