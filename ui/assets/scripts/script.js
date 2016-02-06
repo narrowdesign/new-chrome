@@ -10,6 +10,8 @@ var Logo_el = document.querySelector('.Header .logo');
 var Notif_el = document.querySelector('.Notification-dot');
 var Button_plus_el = document.querySelector('.Button-plus');
 var Header_title_el = document.querySelector('.Header-title');
+var Covers = document.querySelectorAll('.PostCard .Cover')
+console.log(Covers)
 
 // Modules
 var Notif_menu = document.querySelector('.Notification-menu')
@@ -69,6 +71,11 @@ function scrollHandler(e) {
 		Header_el.classList.remove('collapsed')
 	}
 	Header_title_el.style.top = Math.max(0,Math.min(100,-scrollTop/5))
+
+	for (var i = Covers.length - 1; i >= 0; i--) {
+		
+		// Covers[i].style.top = (scrollTop+Covers[i].offsetTop+430)/30
+	};
 }
 function moveHandler(e) {
 
