@@ -513,6 +513,9 @@ button {
 .Header .Url {
   margin: 35px 0;
 }
+.Header.collapsed {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
 .Header.collapsed .Title {
   opacity: 0;
 }
