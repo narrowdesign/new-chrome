@@ -8,7 +8,7 @@ var App = document.querySelector('#app')
 // Header Elements
 var HeaderElement = document.querySelector('.Header');
 var LogoElement = document.querySelector('.Header .logo');
-var NotificationElement = document.querySelector('.Notification-dot');
+var NotificationElement = document.querySelector('.Notification-badge');
 var Button_plusElement = document.querySelector('.Button-plus');
 var Header_titleElement = document.querySelector('.Header-title');
 var Covers = document.querySelectorAll('.PostCard .Cover')

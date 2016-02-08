@@ -371,7 +371,7 @@ button {
   font-size: 1rem;
   border-bottom: 1px solid;
 }
-.Notification-dot {
+.Notification-badge {
   width: 30px;
   height: 30px;
   background: #ed464e;
@@ -382,7 +382,7 @@ button {
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-.Notification-dot:hover {
+.Notification-badge:hover {
   color: #ed464e;
   background: #fff;
 }
