@@ -7,7 +7,7 @@ var _winH;
 var App = document.querySelector('#app')
 // Header Elements
 var HeaderElement = document.querySelector('.Header');
-var LogoElement = document.querySelector('.Header .logo');
+var LogoElement = document.querySelector('.Logo');
 var NotificationElement = document.querySelector('.Notification-badge');
 var Button_plusElement = document.querySelector('.Button-plus');
 var Header_titleElement = document.querySelector('.Header-title');

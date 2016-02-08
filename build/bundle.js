@@ -19011,10 +19011,10 @@ module.exports = React.createClass({
   render: function () {
     return React.createElement(
       "div",
-      { className: "logo" },
+      { className: "Logo" },
       React.createElement(
         "svg",
-        { className: "Logo", width: "32", height: "32" },
+        { width: "32", height: "32" },
         React.createElement("path", { d: "M 16 16 L 21.333333333333332 16 L 21.333333333333332 21.333333333333332 L 10.666666666666666 21.333333333333332 L 10.666666666666666 10.666666666666666 L 26.666666666666664 10.666666666666666 L 26.666666666666664 26.666666666666664 L 5.333333333333332 26.666666666666664 L 5.333333333333332 5.333333333333332 L 26.666666666666664 5.333333333333332", stroke: "#fff266", fill: "none", strokeWidth: "2", strokeLinecap: "square" })
       )
     );
