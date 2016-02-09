@@ -1,6 +1,6 @@
-var React = require('react');
+import React from 'react'
 
-module.exports = React.createClass({
+class NotificationBadge extends React.Component {
   render() {
     return (
       <div className="Notification-badge fixed-tr">
@@ -8,4 +8,4 @@ module.exports = React.createClass({
       </div>
     );
   }
-})
+}

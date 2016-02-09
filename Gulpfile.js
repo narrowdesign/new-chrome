@@ -1,5 +1,7 @@
 var gulp = require('gulp'),
     less = require('gulp-less'),
+    babelify = require('babelify'), // Used to convert ES6 & JSX to ES5
+    browserify = require('browserify'), // Providers "require" support, CommonJS
     livereload = require('gulp-livereload'),
     watch = require('gulp-watch');
 

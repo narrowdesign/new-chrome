@@ -1,13 +1,14 @@
-var React = require('react')
-var ReactDOM = require('react-dom')
-var Logo = require('./components/Logo')
-var PlusButton = require('./components/PlusButton')
-var Nav = require('./components/Nav')
-var NotificationBadge = require('./components/NotificationBadge')
-var HeaderContent = require('./components/HeaderContent')
 
-var Header = React.createClass({
-  render: function(){
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Logo from './components/Logo'
+import PlusButton from './components/PlusButton'
+import Nav from './components/Nav'
+import NotificationBadge from './components/NotificationBadge'
+import HeaderContent from './components/HeaderContent'
+
+class Header extends React.Component {
+  render() {
     return (
       <div className="Header">
         <Logo />
@@ -18,7 +19,7 @@ var Header = React.createClass({
       </div>
     )
   }
-});
+}
 
 ReactDOM.render(<Header />, document.querySelector('.reactApp'))
 
