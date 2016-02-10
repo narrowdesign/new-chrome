@@ -1,7 +1,7 @@
-import React from 'react'
+var React = require('react');
 
-class HeaderContent extends React.Component {
-  render() {
+module.exports = React.createClass({
+  render: function(){
     var site_title = 'The Grid Showcase';
     return (
       <div className="Header-content">
@@ -11,4 +11,4 @@ class HeaderContent extends React.Component {
       </div>
     )
   }
-}
+})

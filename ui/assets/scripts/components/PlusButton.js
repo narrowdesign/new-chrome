@@ -1,11 +1,11 @@
-import React from 'react'
+var React = require('react');
 
-class PlusButton extends React.Component {
-  render() {
+module.exports = React.createClass({
+  render: function(){
     return (
       <button className="Button Button-plus tr-fast">
         <span className="Button-icon">+</span>
       </button>
     )
   }
-}
+});

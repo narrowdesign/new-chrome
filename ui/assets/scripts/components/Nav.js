@@ -1,7 +1,7 @@
-import React from 'react'
+var React = require('react');
 
-class Nav extends React.Component {
-  render() {
+module.exports = React.createClass({
+  render: function(){
     return (
       <div className="Nav">
         <div className="Link active">Content</div>
@@ -10,4 +10,4 @@ class Nav extends React.Component {
       </div>
     )
   }
-}
+})
